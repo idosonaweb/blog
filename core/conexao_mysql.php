@@ -28,7 +28,7 @@
         return $conexao ;
     }
 
-    function desconecta ()
+    function desconecta ($conexao)
     {
         mysqli_close($conexao) ;
     }
