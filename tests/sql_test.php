@@ -4,9 +4,9 @@
 
     $id = 1 ;
 
-    $nome = 'murilo' ;
+    $nome = 'João' ;
 
-    $email = 'murilo@gmail.com' ;
+    $email = 'jvieiraluzpiva@gmail.com' ;
 
     $senha = '123mudar' ;
 
