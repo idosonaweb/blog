@@ -8,7 +8,7 @@
 
     require_once '../core/mysql.php' ;
 
-    insert_teste('João', 'joao@ifsp.edu.br', '123456');
+    insert_teste('John Peter', 'jvieiraluzpiva@aluno.ifsp.edu.br', '300804');
 
     buscar_teste();
 
