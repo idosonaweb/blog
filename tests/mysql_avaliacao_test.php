@@ -64,7 +64,7 @@
 
     function buscar_teste_post () : void 
     {
-        $posts = buscar('posts', [ 'id', 'titulo', 'texto'], [], '') ;
+        $posts = buscar('post', [ 'id', 'titulo', 'texto'], [], '') ;
 
         print_r($posts);
        
@@ -117,7 +117,5 @@
         atualiza('avaliacao', $dados, $criterio);
         
     }
-
-    
 
 ?>
