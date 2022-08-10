@@ -10,7 +10,7 @@
 
             $tipo[] = gettype($dado) [0] ;
 
-            $campo = $dado ;
+            $$campo = $dado ;
         }
 
         $instrucao = insert ($entidade, $coringa) ;
@@ -49,7 +49,7 @@
 
         foreach ($criterio as $expressao) 
         {
-            $dado = $expressao[count($expressao)] -1 ;
+            $dado = $expressao[count($expressao) -1] ;
 
             $tipo[] = gettype($dado) [0] ;
 
@@ -69,7 +69,7 @@
             $$nome_campo = $dado ;
         }
 
-        $instrucao = update($entidade, $coringa_dados, $coringa_criterio) ;
+        $instrucao = update($entidade, $coringa_dados, $coringa_criterio);
 
         $conexao = conecta () ;
 
@@ -77,18 +77,24 @@
 
         if (isset($tipo))
         {
-            $comando = 'mysqli_stmt_bind_param($stmt,' ;
+            $comando = 'mysqli_stmt_bind_param($stmt,';
 
-            $comando = "'" . implode('', $tipo) . "'" ;
+            $comando .= "'" . implode('', $tipo) . "'" ;
             
-            $comando = ', $' . implode(', $', array_keys($dados)) ;
+            $comando .= ', $' . implode(', $', array_keys($dados)) ;
 
-            $comando = ', $' . implode(', $', $campos_criterio) ;
+            $comando .= ', $' . implode(', $', $campos_criterio) ;
 
-            $comando = ');' ;
+            $comando .= ');' ;
 
             eval($comando);
         }
+
+        mysqli_stmt_execute($stmt) ;
+
+        $retorno = (boolean) mysqli_stmt_affected_rows($stmt);
+
+        $_SESSION['errors'] = mysqli_stmt_error_list($stmt) ;
 
         mysqli_stmt_close($stmt) ;
 
@@ -105,7 +111,7 @@
 
         foreach ($criterio as $expressao) 
         {
-            $dado = $expressao[count($expressao)] -1 ;
+            $dado = $expressao[count($expressao) -1] ;
 
             $tipo[] = gettype($dado) [0] ;
 
@@ -120,7 +126,7 @@
             $$nome_campo = $dado ;
         }
 
-        $instrucao = delete ($entidade, $coringa_criterior) ;
+        $instrucao = delete ($entidade, $coringa_criterio) ;
 
         $conexao = conecta() ;
 
@@ -130,11 +136,11 @@
         {
             $comando = 'mysqli_stmt_bind_param($stmt,' ;
 
-            $comando = "'" . implode('', $tipo) . "'" ;
+            $comando .= "'" . implode('', $tipo) . "'" ;
         
-            $comando = ', $' . implode(', $', $campos_criterio) ;
+            $comando .= ', $' . implode(', $', $campos_criterio) ;
 
-            $comando = ');' ;
+            $comando .= ');' ;
 
             eval($comando);
         }
@@ -160,7 +166,7 @@
 
         foreach ($criterio as $expressao) 
         {
-            $dado = $expressao[count($expressao)] -1 ;
+            $dado = $expressao[count($expressao) -1] ;
 
             $tipo[] = gettype($dado) [0] ;
 
@@ -170,7 +176,7 @@
 
             $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1] ;
 
-            if (isset($nome_campo))
+            if (isset($$nome_campo))
             {
                 $nome_campo = $nome_campo . '_' . rand() ;
             }
@@ -180,7 +186,7 @@
             $$nome_campo = $dado ;
         }
 
-        $instrucao = select ($entidade, $campos , $coringa_criterior, $ordem) ;
+        $instrucao = select ($entidade, $campos , $coringa_criterio, $ordem) ;
 
         $conexao = conecta() ;
 
@@ -190,11 +196,11 @@
         {
             $comando = 'mysqli_stmt_bind_param($stmt,' ;
 
-            $comando = "'" . implode('', $tipo) . "'" ;
+            $comando .= "'" . implode('', $tipo) . "'" ;
 
-            $comando = ', $' . implode(', $', $campos_criterio) ;
+            $comando .= ', $' . implode(', $', $campos_criterio) ;
 
-            $comando = ');' ;
+            $comando .= ');' ;
 
             eval($comando);
         }
