@@ -8,18 +8,18 @@
 
     require_once '../core/mysql.php' ;
 
-    insert_teste_avaliacao(5, 'DAORA EM PAE');
+    insert_teste_avaliacao(5, 'DAORA EM PAE', 1, 1);
 
     buscar_teste_avaliacao();
 
-    update_teste_avaliacao(45, 3, 'COMMIT');
+    update_teste_avaliacao(3, 'COMMIT', 1);
 
     buscar_teste_avaliacao();
 
 
-    function insert_teste_avaliacao ($nota, $comentario) : void 
+    function insert_teste_avaliacao ($nota, $comentario, $usuario_id, $post_id) : void 
     {
-        $dados = ['nota' => $nota, 'comentario' => $comentario] ;
+        $dados = ['nota' => $nota, 'comentario' => $comentario, 'usuario_id' => $usuario_id, 'post_id' => $post_id] ;
 
         insere('avaliacao', $dados);
       
@@ -27,7 +27,7 @@
 
     function buscar_teste_avaliacao () : void 
     {
-        $avaliacoes = buscar('avaliacao', [ 'id', 'nota', 'comentario'], [], '') ;
+        $avaliacoes = buscar('avaliacao', [ 'id', 'nota', 'comentario', 'usuario_id', 'post_id'], [], '') ;
 
         print_r($avaliacoes);
        
