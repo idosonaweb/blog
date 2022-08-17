@@ -16,6 +16,7 @@
 
     buscar_teste_avaliacao();
 
+
     function insert_teste_avaliacao ($nota, $comentario) : void 
     {
         $dados = ['nota' => $nota, 'comentario' => $comentario] ;
