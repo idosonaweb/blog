@@ -6,8 +6,7 @@
 
         <title>Página inicial | Projeto para Web com PHP</title>
 
-        <link rel="stylesheet" 
-              href="lib/css/bootstrap.min.css">
+        <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 
     </head>
 
@@ -72,7 +71,7 @@
                                 'AND',
                                 'texto',
                                 'like',
-                                "%{$busca}"
+                                "%{$busca}%"
                             ];
                         }
 
@@ -83,7 +82,7 @@
                                 'titulo',
                                 'data_postagem',
                                 'id',
-                                '(select nome from usuario WHERE usuario.id = post.usuario_id) as nome'
+                                '(select nome from usuario where usuario.id = post.usuario_id) as nome'
                             ],
 
                             $criterio,
