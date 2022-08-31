@@ -42,7 +42,7 @@
 
         <title><?php echo $post['titulo'] ?></title>
 
-        <link rel="stylesheet" href="lib/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="lib/css/bootstrap.min.css">
 
     </head>
 
