@@ -43,6 +43,11 @@ CREATE TABLE avaliacao (
 
 );
 
+select * from usuario ;
+
+insert into usuario (nome, email, senha, ativo)
+values ('João Pedro', 'piva@gmail.com', 'piva012', 1);
+
 select * from post ;
 
 insert into post (titulo, texto, usuario_id)

@@ -59,8 +59,8 @@
 
                         $data_Atual = date('Y-m-d H:i:s') ;
 
-                        $criterio =
-                        [
+                        $criterio = [
+                            
                             ['data_postagem', '<=', $data_Atual]
                         ];
 
