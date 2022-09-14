@@ -87,6 +87,8 @@
 
                     ?>
 
+                    <br>
+
                     <table class="table table-bordered table-hover table-striped
                         table-responsive{-sm|-md|-lg|-xl}">
 

@@ -90,6 +90,8 @@
                         );
                     ?>
 
+                    <br>
+
                     <div>
 
                         <div class="list-group">
@@ -125,6 +127,8 @@
                 </div>
 
             </div>
+
+            <br>
 
             <div class="row">
 
