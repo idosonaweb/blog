@@ -22,8 +22,7 @@
     switch ($acao) 
     {
         case 'insert':
-            $dados = 
-            [
+            $dados = [
                 'nome' => $nome,
                 'email' => $email,
                 'senha' => crypt($senha, $salt)
@@ -37,14 +36,12 @@
             
             $id = (int)$id ;
 
-            $dados =
-            [
+            $dados = [
                 'nome' => $nome,
-                'email' => $email,
+                'email' => $email
             ];
 
-            $criterio =
-            [
+            $criterio = [
                 ['id', '=', $id]
             ];
 
@@ -53,13 +50,16 @@
             break;
 
         case 'login':
-            $criterio =
-            [
+            $criterio = [
                 ['email', '=', $email],
                 ['AND', 'ativo', '=', 1]
             ];
 
-            $retorno = buscar('usuario', ['id', 'nome', 'email', 'senha', 'adm'], $criterio);
+            $retorno = buscar(
+                'usuario', 
+                ['id', 'nome', 'email', 'senha', 'adm'], 
+                $criterio
+            );
 
             if (count($retorno) > 0) 
             {
@@ -92,13 +92,11 @@
 
             $valor = (int)$valor ;
 
-            $dados =
-            [
+            $dados = [
                 'ativo' => $valor 
             ];
 
-            $criterio =
-            [
+            $criterio = [
                 ['id', '=', $id]
             ];
 
@@ -116,13 +114,11 @@
 
             $valor = (int)$valor ;
 
-            $dados =
-            [
+            $dados = [
                 'adm' => $valor 
             ];
 
-            $criterio =
-            [
+            $criterio = [
                 ['id', '=', $id]
             ];
 

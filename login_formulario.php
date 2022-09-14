@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
     <head>
@@ -58,7 +60,7 @@
 
                             </div>
 
-                            <div class="text-right">
+                            <div class="text-right"> 
 
                                 <button class="btn btn-success" type="submit">Acessar</button>
 

@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <?php
 
     require_once 'includes/funcoes.php' ;
@@ -13,14 +15,14 @@
         $$indice = limparDados($dado) ;
     }
 
-    $posts = buscar
-    (
+    $posts = buscar (
         'post',
         [
             'titulo',
             'data_postagem',
             'texto',
-            '(select nome from usuario WHERE usuario.id = post.usuario_id) as nome'
+            '(select nome from usuario 
+                          WHERE usuario.id = post.usuario_id) as nome'
         ],
         [
             ['id', '=', $post]
@@ -28,11 +30,11 @@
 
     );
 
-    $post = $posts(0) ;
+    $post = $posts[0] ;
 
     $data_post = date_create($post['data_postagem']) ;
 
-    $data_post = date_format($data_post, 'd/m/Y H:i:s') ;
+    $data_post = date_format($data_post, 'd/m/Y  H:i:s') ;
 
 ?>
 

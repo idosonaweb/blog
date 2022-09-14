@@ -46,13 +46,11 @@
                         {
                             $id = (int) $_SESSION['login']['usuario']['id'];
 
-                            $criterio = 
-                            [
+                            $criterio = [
                                 ['id', '=', $id]
                             ];
 
-                            $retorno = buscar
-                            (
+                            $retorno = buscar (
                                 'usuario',
                                 ['id', 'nome', 'email'],
                                 $criterio
@@ -108,8 +106,8 @@
 
                         <div class="text-right">
 
-                            <button class="btn btn-success" type="submit">
-                            Salvar</button>
+                            <button class="btn btn-success" 
+                            type="submit">Salvar</button>
 
                         </div>
 

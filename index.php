@@ -66,8 +66,7 @@
 
                         if (!empty($busca)) 
                         {
-                            $criterio[] =
-                            [
+                            $criterio[] = [
                                 'AND',
                                 'texto',
                                 'like',
@@ -75,14 +74,14 @@
                             ];
                         }
 
-                        $posts = buscar
-                        (
+                        $posts = buscar (
                             'post',
                             [
                                 'titulo',
                                 'data_postagem',
                                 'id',
-                                '(select nome from usuario where usuario.id = post.usuario_id) as nome'
+                                '(select nome from usuario 
+                                              where usuario.id = post.usuario_id) as nome'
                             ],
 
                             $criterio,
@@ -97,7 +96,7 @@
 
                             <?php
                             
-                                foreach ($posts as $posts): 
+                                foreach ($posts as $post): 
                                 {
                                     $data = date_create($post['data_postagem']) ;
 

@@ -24,11 +24,10 @@
     {
         case 'insert':
             
-            $dados =
-            [
+            $dados = [
                 'titulo'            => $titulo,
                 'texto'             => $texto,
-                'data_postagem'     => "$data_postagem $hora_postagem",
+                'data_postagem'     => "$data_postagem  $hora_postagem",
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];
 
@@ -47,8 +46,7 @@
                 'usuario_id'        => $_SESSION['login']['usuario']['id']
             ];
 
-            $criterio =
-            [
+            $criterio = [
                 ['id', '=', $id]
             ];
 
@@ -58,8 +56,7 @@
 
         case 'delete':
             
-            $criterio =
-            [
+            $criterio = [
                 ['id', '=', $id]
             ];
 
