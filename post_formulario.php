@@ -3,7 +3,7 @@
 
     <head>
         
-        <litle>Post | Projeto para Web com PHP</litle>
+        <title>Post | Projeto para Web com PHP</title>
         
         <link rel="stylesheet"
             href="lib/css/bootstrap.min.css">
@@ -93,7 +93,7 @@
 
                                 <label for="texto">Texto</label>
                                 
-                                <textarea class="form-group" type="text"
+                                <textarea class="form-control" type="text"
                                     require="require" id="texto" name="texto" rows="5">
                                     <?php echo $entidade['texto'] ?? '' ?>
                                 </textarea>
