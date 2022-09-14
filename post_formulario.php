@@ -105,10 +105,10 @@
 
                             <?php 
 
-                                $data = (!empty($entidade['data_postagem']))?
+                                $data = (!empty($entidade['data_postagem'])) ?
                                     explode(' ', $entidade['data_postagem'])[0] : '';
 
-                                $hora = (!empty($entidade['data_postagem']))?
+                                $hora = (!empty($entidade['data_postagem'])) ?
                                     explode(' ', $entidade['data_postagem'])[1] : '';
                             ?>
 
@@ -138,7 +138,7 @@
 
                         </div> 
 
-                        <div class="texto-right">
+                        <div class="text-right">
 
                             <button class="btn btn-sucess"
                                     type="submit">Salvar</button>
