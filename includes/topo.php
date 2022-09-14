@@ -8,7 +8,7 @@
 
     <div class="card-header">
 
-        <h1>Projeto Blog em PHP + MYSQL IFSP - MURILO</h1>
+        <h1>Projeto Blog em PHP + MYSQL IFSP - João Pedro</h1>
 
     </div>
 

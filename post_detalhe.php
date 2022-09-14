@@ -21,8 +21,9 @@
             'titulo',
             'data_postagem',
             'texto',
-            '(select nome from usuario 
-                          WHERE usuario.id = post.usuario_id) as nome'
+            '(select nome 
+                from usuario 
+                WHERE usuario.id = post.usuario_id) as nome'
         ],
         [
             ['id', '=', $post]
@@ -58,6 +59,8 @@
 
                 <?php include 'includes/topo.php'; ?>
 
+                </div>
+
             </div>
 
             <div class="row" style="min-height: 500px;">
@@ -91,8 +94,10 @@
                 </div>
         
             </div>
+    
+        </div>
 
-            <div class="row">
+        <div class="row">
 
                 <div class="col-md-12">
 
@@ -100,8 +105,6 @@
 
                 </div>
                             
-            </div>
-    
         </div>
 
         <script src="lib/js/bootstrap.min.js"></script>

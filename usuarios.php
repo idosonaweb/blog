@@ -6,7 +6,7 @@
         <title>Usuários | Projeto para Web com PHP</title>
         
         <link rel="stylesheet"
-            href="lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+            href="lib/css/bootstrap.min.css">
 
     </head>
 
@@ -156,7 +156,7 @@
 
     </div>
 
-    <script src="lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
 
     </body>
 
